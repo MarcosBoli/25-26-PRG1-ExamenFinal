@@ -3,9 +3,10 @@ import java.util.Scanner;
 public class ConversorUnidades {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        boolean f = true;
+        boolean operacionValida = true;
         int eleccionConversion = 0;
 
+       while (operacionValida){
         
         eleccionConversion= pedirConversion(sc, eleccionConversion);
 
@@ -36,7 +37,7 @@ public class ConversorUnidades {
                 System.out.println(v + " in = " + (v * 2.54) + " cm");
             } else {
                 System.out.println("Opcion no valida");
-                f = false;
+                operacionValida = false;
             }
         } else if (eleccionConversion == 2) {
             System.out.println("Conversion de peso:");
@@ -65,7 +66,7 @@ public class ConversorUnidades {
                 System.out.println(v + " oz = " + (v * 28.3495) + " g");
             } else {
                 System.out.println("Opcion no valida");
-                f = false;
+                operacionValida = false;
             }
         } else if (eleccionConversion == 3) {
             System.out.println("Conversion de temperatura:");
@@ -88,11 +89,13 @@ public class ConversorUnidades {
                 System.out.println(v + " K = " + (v - 273.15) + " C");
             } else {
                 System.out.println("Opcion no valida");
-                f = false;
+                operacionValida = false;
             }
         } else {
             System.out.println("Tipo no valido");
         }
+       } 
+        
     }
 
     static int pedirConversion(Scanner sc, int eleccionConversion) {
